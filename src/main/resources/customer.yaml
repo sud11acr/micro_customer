@@ -1,0 +1,192 @@
+openapi: "3.0.1"
+
+info:
+  title: "Microservicio Customer Documentation"
+  version: "1"
+  description: User API
+
+servers:
+  - url: http://localhost:8080/
+    description: Local server
+
+paths:
+
+  /customer/create:
+    post:
+      summary: Save
+      operationId: saveCustomer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerRequest'
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerRequest'
+        201:
+          description: Created
+          content: {}
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+      deprecated: false
+      x-codegen-request-body-name: customer
+
+  /customer/delete/{id}:
+    delete:
+      tags:
+        - custome-controller
+      summary: delete
+      operationId: deleteCustomer
+      parameters:
+        - name: id
+          in: path
+          description: id
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: OK
+          content: {}
+        204:
+          description: No Content
+          content: {}
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+      deprecated: false
+
+  /customer/find/{id}:
+    get:
+      tags:
+        - custome-controller
+      summary: findById
+      operationId: findByIdCustomer
+      parameters:
+        - name: id
+          in: path
+          description: id
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerRequest'
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+      deprecated: false
+  /customer/findAll:
+    get:
+      tags:
+        - custome-controller
+      summary: findAll
+      operationId: findAllCustomer
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CustomerRequest'
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+      deprecated: false
+  /customer/update/{id}:
+    put:
+      tags:
+        - custome-controller
+      summary: update
+      operationId: updateConsumer
+      parameters:
+        - name: id
+          in: path
+          description: id
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: customer
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerRequest'
+        required: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerRequest'
+        201:
+          description: Created
+          content: {}
+        401:
+          description: Unauthorized
+          content: {}
+        403:
+          description: Forbidden
+          content: {}
+        404:
+          description: Not Found
+          content: {}
+      deprecated: false
+      x-codegen-request-body-name: customer
+components:
+  schemas:
+    CustomerRequest:
+      title: CustomerRequest
+      required:
+        - document
+      type: object
+      properties:
+        customerKind:
+          type: string
+        document:
+          type: string
+        idCustomer:
+          type: string
+        lastName:
+          type: string
+        modificationDate:
+          type: string
+        name:
+          type: string
+        registrationDate:
+          type: string
+        status:
+          type: boolean
