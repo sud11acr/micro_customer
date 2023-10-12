@@ -19,7 +19,7 @@ public class Customer {
     private String name;
     private String lastName;
     private String document;
-    private String customerKind;
+    private String customerType;
     private Date registrationDate;
     private Date modificationDate;
     private Boolean status;

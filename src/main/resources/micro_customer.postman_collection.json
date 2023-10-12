@@ -1,0 +1,159 @@
+{
+	"info": {
+		"_postman_id": "fb9849a8-6db8-4d2e-bec4-e2fbb9d950ec",
+		"name": "micro_customer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10392878"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/customer/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Lindsay\",\r\n    \"lastName\":\"Luyo\",\r\n    \"document\": \"45236589\",\r\n    \"customerType\": \"1\",\r\n    \"registrationDate\": \"2023-10-06T10:00:00Z\",\r\n    \"modificationDate\": \"2023-10-06T10:00:00Z\",\r\n    \"status\": true\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/customer/create",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/customer/findAll",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Richard\",\r\n    \"lastName\":\"Ramos\",\r\n    \"document\": \"785422145\",\r\n    \"customerKind\": \"1\",\r\n    \"registrationDate\": \"2023-09-20T10:00:00Z\",\r\n    \"modificationDate\": \"2023-09-20T10:00:00Z\",\r\n    \"status\": true\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/customer/findAll",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"findAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/customer/find/650b32aecdbcd668f15eb34c",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Richard\",\r\n    \"lastName\":\"Ramos\",\r\n    \"document\": \"785422145\",\r\n    \"customerKind\": \"1\",\r\n    \"registrationDate\": \"2023-09-20T10:00:00Z\",\r\n    \"modificationDate\": \"2023-09-20T10:00:00Z\",\r\n    \"status\": true\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/customer/find/650b32aecdbcd668f15eb34c",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"find",
+						"650b32aecdbcd668f15eb34c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/customer/update/650b32aecdbcd668f15eb34c",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Juan\",\r\n    \"lastName\":\"Ramosss\",\r\n    \"document\": \"785422145\",\r\n    \"customerKind\": \"1\",\r\n    \"registrationDate\": \"2023-09-20T10:00:00Z\",\r\n    \"modificationDate\": \"2023-09-20T10:00:00Z\",\r\n    \"status\": true\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/customer/update/650b32aecdbcd668f15eb34c",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"update",
+						"650b32aecdbcd668f15eb34c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/customer/delete/650b32aecdbcd668f15eb34c",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Juan\",\r\n    \"lastName\":\"Ramos\",\r\n    \"document\": \"785422145\",\r\n    \"customerKind\": \"1\",\r\n    \"registrationDate\": \"2023-09-20T10:00:00Z\",\r\n    \"modificationDate\": \"2023-09-20T10:00:00Z\",\r\n    \"status\": true\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/customer/delete/650c7d83adaa3d2a96b54509",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"delete",
+						"650c7d83adaa3d2a96b54509"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

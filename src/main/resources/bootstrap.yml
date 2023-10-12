@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: customer
+  cloud:
+    config:
+      uri: http://localhost:8099
+      username: nttdata
+      password: nttd4t4

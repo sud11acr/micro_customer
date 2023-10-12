@@ -174,7 +174,7 @@ components:
         - document
       type: object
       properties:
-        customerKind:
+        customerType:
           type: string
         document:
           type: string

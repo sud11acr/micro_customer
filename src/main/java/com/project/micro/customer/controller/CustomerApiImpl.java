@@ -16,9 +16,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.net.URI;
-import java.util.Arrays;
 import java.util.Date;
-import java.util.List;
 
 @RestController
 public class CustomerApiImpl implements CustomerApi{
@@ -82,7 +80,7 @@ public class CustomerApiImpl implements CustomerApi{
         return monoBD.zipWith(monoBody,(bd,pl)->{
                     bd.setIdCustomer(id);
                     bd.setName(pl.getName());
-                    bd.setCustomerKind(pl.getCustomerKind());
+                    bd.setCustomerType(pl.getCustomerType());
                     bd.setDocument(pl.getDocument());
                     bd.setLastName(pl.getLastName());
                     bd.setModificationDate(new Date());
@@ -101,7 +99,7 @@ public class CustomerApiImpl implements CustomerApi{
     private static Customer getCustomer(CustomerRequest p) {
         Customer customerBd=new Customer();
         customerBd.setIdCustomer(p.getIdCustomer());
-        customerBd.setCustomerKind(p.getCustomerKind());
+        customerBd.setCustomerType(p.getCustomerType());
         customerBd.setName(p.getName());
         customerBd.setLastName(p.getLastName());
         customerBd.setStatus(true);
@@ -113,7 +111,7 @@ public class CustomerApiImpl implements CustomerApi{
     private static CustomerRequest getCustomerRequest(Customer c) {
         CustomerRequest customerRequest=new CustomerRequest();
         customerRequest.setIdCustomer(c.getIdCustomer());
-        customerRequest.setCustomerKind(c.getCustomerKind());
+        customerRequest.setCustomerType(c.getCustomerType());
         customerRequest.setDocument(c.getDocument());
         customerRequest.setName(c.getName());
         customerRequest.setLastName(c.getLastName());
