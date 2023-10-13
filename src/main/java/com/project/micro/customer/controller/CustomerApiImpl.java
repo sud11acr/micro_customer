@@ -6,6 +6,7 @@ import com.project.micro.customer.api.CustomerApi;
 import com.project.micro.customer.dto.CustomerRequest;
 import com.project.micro.customer.model.Customer;
 import com.project.micro.customer.service.ICustomerService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -17,7 +18,7 @@ import reactor.core.publisher.Mono;
 
 import java.net.URI;
 import java.util.Date;
-
+@Slf4j
 @RestController
 public class CustomerApiImpl implements CustomerApi{
 
@@ -44,13 +45,11 @@ public class CustomerApiImpl implements CustomerApi{
 
     @Override
     public Mono<ResponseEntity<CustomerRequest>> findByIdCustomer(String id, ServerWebExchange exchange) {
-        Mono<CustomerRequest> mono=service.findByid(id).map(c->{
-            return getCustomerRequest(c);
-        });
-        return mono
-                .map(p->ResponseEntity.ok()
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .body(p));
+        return service.findByid(id)
+                        .map(CustomerApiImpl::getCustomerRequest)
+                        .map(p->ResponseEntity.ok()
+                                .contentType(MediaType.APPLICATION_JSON)
+                                .body(p));
     }
 
 
